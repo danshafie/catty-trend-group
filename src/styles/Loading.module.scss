@@ -1,0 +1,83 @@
+$s-min: 20;
+$s-max: 70;
+$l-min: 30;
+$l-max: 90;
+
+@for $i from 1 through 3 {
+  .threeBallsLoading span:nth-child(#{$i}) {
+    background: hsl(
+      random(360),
+      $s-min + random($s-max + -$s-min),
+      $l-min + random($l-max + -$l-min)
+    );
+  }
+}
+
+.threeBallsLoading {
+  position: relative;
+  left: calc(50% - 30px);
+  width: 60px;
+  margin-top: 150px;
+}
+.threeBallsLoading span,
+.threeBallsLoading span:nth-child(1),
+.threeBallsLoading span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  left: 0;
+}
+.threeBallsLoading span {
+  animation: bounce 1s infinite;
+  -webkit-animation: bounce 1s infinite;
+}
+.threeBallsLoading span:nth-child(1) {
+  left: 22px;
+  animation: bounce 1s infinite;
+  -webkit-animation: bounce 1s infinite;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.threeBallsLoading span:nth-child(2) {
+  left: 44px;
+  animation: bounce 1s infinite;
+  -webkit-animation: bounce 1s infinite;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  40% {
+  }
+  50% {
+    top: 6px;
+    -webkit-animation-timing-function: ease-out;
+    width: 12px;
+  }
+  55% {
+    top: 10px;
+    -webkit-animation-timing-function: ease-in;
+    width: 13px;
+    height: 12px;
+  }
+  65% {
+    top: 2px;
+    -webkit-animation-timing-function: ease-out;
+    width: 12px;
+    height: 16px;
+  }
+  95% {
+    top: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  100% {
+    top: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+}

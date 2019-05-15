@@ -1,0 +1,75 @@
+.imageContainer {
+  height: 100%;
+  position: relative;
+  margin: 10px 10px;
+}
+
+.imageContainer:hover .favorite {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) 1;
+  transform: translate(-50%, 0px);
+}
+
+.catImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.catImage.loaded {
+  opacity: 1;
+  visibility: visible;
+}
+
+.favorite {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 5px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgba(232, 223, 223, 0.9);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px 0px;
+  border-radius: 5px;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  background-position: center;
+}
+
+.favorite:hover {
+  background: #307930 radial-gradient(circle, transparent 1%, #307930 1%)
+    center/15000%;
+}
+
+.favorite:active {
+  background-color: #d9e4ed;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.favoritesPage:hover {
+  background: rgb(140, 59, 78);
+}
+
+svg {
+  fill: red;
+  margin-left: 5px;
+}
+
+@media (min-width: 648px) {
+  .imageContainer {
+    margin: 0px 0px;
+  }
+}
